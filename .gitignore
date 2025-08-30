@@ -31,3 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+node_modules/
+dist/
+.cache/
+.angular/
+
+.DS_Store
+Thumbs.db
