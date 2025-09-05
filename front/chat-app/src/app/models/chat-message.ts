@@ -1,4 +1,5 @@
 export interface ChatMessage {
-  from: string;
+  chatId: string;
+  from: 'client' | 'support';
   content: string;
 }

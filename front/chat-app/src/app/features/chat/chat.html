@@ -1,12 +1,25 @@
 <div class="container mt-4">
   <mat-card>
-    <mat-card-title class="p-3">Support Chat</mat-card-title>
+    <mat-card-title class="p-3">Support Chat ({{ currentRole }})</mat-card-title>
+
+    <div class="mb-3">
+      <label class="me-2">
+        <input type="radio" [(ngModel)]="currentRole" value="client" (change)="onRoleChange()" />
+        Client
+      </label>
+      <label>
+        <input type="radio" [(ngModel)]="currentRole" value="support" (change)="onRoleChange()" />
+        Support
+      </label>
+    </div>
 
     <mat-card-content>
       <div class="messages mb-3 overflow-auto">
         @for (msg of messages; track msg) {
-          <div class="d-flex mb-2">
-            <div class="p-2 rounded bg-light w-100">
+          <div class="d-flex mb-2"
+               [ngClass]="msg.from === 'client' ? 'justify-content-start' : 'justify-content-end'">
+            <div class="p-2 rounded"
+                 [ngClass]="msg.from === 'client' ? 'bg-light' : 'bg-primary text-white'">
               <strong>{{ msg.from }}:</strong> {{ msg.content }}
             </div>
           </div>

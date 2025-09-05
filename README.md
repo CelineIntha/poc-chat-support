@@ -51,6 +51,15 @@ http://localhost:8080/chat
 ws://localhost:8080/chat
 ```
 
+## Base de données
+
+Le script de création de la base de données se trouve dans :
+```
+back/src/main/resources/db/script.sql
+```
+
+Il contient les tables principales de l’application (utilisateur, réservation, offre, message de support, etc.).
+
 ## Lancer le projet front
 
 Depuis le dossier front/chat-app :
@@ -89,14 +98,14 @@ http://localhost:4200
 ## Comment tester le PoC
 
 1. Lancer le backend (mvn spring-boot:run)
-2. Lancer le frontend (ng serve)
-3. Ouvrir http://localhost:4200 dans 2 onglets différents.
+2. Lancer le frontend (ng serve ou npm run start)
+3. Ouvrir http://localhost:4200 dans 2 onglets ou navigateurs différents. (ex : un onglet en tant que client, un autre en tant que support).
 4. Envoyer un message depuis un onglet → il apparaît dans les deux.
 
 ## Limites actuelles
 - Pas d’authentification (simplification pour le PoC)
-- Pas de persistance des données
-- UI minimale (pas encore de différenciation claire entre “moi” et “les autres”)
+- Pas de persistance des données (les messages ne sont pas stockés)
+- UI minimale
 
 ## Les prochaines étapes
 - Ajouter l'authentification, la gestion des utilisateurs connectés
