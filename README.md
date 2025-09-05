@@ -30,7 +30,7 @@ ou
 2. Lancer le projet avec la commande
 
 ```
-.mvn spring-boot:run
+mvn spring-boot:run
 ```
 
 ou
