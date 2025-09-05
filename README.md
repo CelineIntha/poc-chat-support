@@ -67,6 +67,12 @@ npm install
 ng serve
 ```
 
+ou
+
+```
+npm run start
+```
+
 3. L'application Angular démarre sur :
 
 ```
